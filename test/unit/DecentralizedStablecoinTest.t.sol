@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.19;
 import {DecentralizedStableCoin} from "../../src/DecentralizedStableCoin.sol";
-import {Test, Console} from "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 import {StdCheats} from "forge-std/StdCheats.sol";
 
 contract DecentralizedStablecointest is StdCheats, Test {
@@ -28,7 +28,7 @@ contract DecentralizedStablecointest is StdCheats, Test {
         dsc.mint(address(this), 100);
         vm.expectRevert();
         dsc.burn(101);
-        vm.stopPrannk();
+        vm.stopPrank();
     }
     function testCantMintToZeroAddress() public {
         vm.startPrank(dsc.owner());
