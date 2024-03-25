@@ -1,66 +1,43 @@
-## Foundry
+## Stablecoin Defi Protocol
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project aims to create a stablecoin where users can deposit Wrapped Ether (WETH) and Wrapped Bitcoin (WBTC) in exchange for a token pegged to the USD.
 
-Foundry consists of:
+### Requirements
+- #### Foundry
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+To get started with Foundry, run the following commands:
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+git clone https://github.com/HemaDeviU/StableCoin-Defi-Protocol
+cd StableCoin-Defi-Protocol
+forge build
 ```
 
-### Test
+### Usage
+- #### For local Deployment
 
-```shell
-$ forge test
-```
+1.  Start a local node
+```make anvil```
+2.  Deploy
+```make deploy```
 
-### Format
+- #### For testnet deployment
 
-```shell
-$ forge fmt
-```
+1. Setup environment variables
+You'll want to set your SEPOLIA_RPC_URL and PRIVATE_KEY as environment variables. You can add them to a .env file.
 
-### Gas Snapshots
+- PRIVATE_KEY: The private key of your account (like from metamask) which has testnet ETH.
+- SEPOLIA_RPC_URL: This is url of the sepolia testnet node you're working with. You can get setup with one for free from Alchemy.
+- ETHERSCAN_API_KEY: To verify the contract,get the api key from etherscan account.
 
-```shell
-$ forge snapshot
-```
+2. Deploy
+make deploy ARGS="--network sepolia"
 
-### Anvil
 
-```shell
-$ anvil
-```
 
-### Deploy
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
 
-### Cast
 
-```shell
-$ cast <subcommand>
-```
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
