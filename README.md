@@ -2,6 +2,8 @@
 
 This project aims to create a stablecoin where users can deposit Wrapped Ether (WETH) and Wrapped Bitcoin (WBTC) in exchange for a token pegged to the USD.
 
+Used : Solidity , Foundry, Openzeppelin, Chainlink vrf, Chainlink automation
+
 ### Requirements
 - #### Foundry
 
